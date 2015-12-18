@@ -22,10 +22,10 @@ import static org.lappsgrid.discriminator.Discriminators.Uri;
 /**
  * Created by shi on 12/18/15.
  */
-public abstract class AbstractDkProService implements WebService {
+public abstract class AbstractUimaService implements WebService {
 
     protected static final Logger logger = LoggerFactory
-            .getLogger(AbstractDkProService.class);
+            .getLogger(AbstractUimaService.class);
 
     @Override
     /**
@@ -82,7 +82,7 @@ public abstract class AbstractDkProService implements WebService {
      * This will be overridden for each module
      */
     public abstract String execute(Container json)
-            throws DkProServiceException;
+            throws UimaServiceException;
 
 
     @Override

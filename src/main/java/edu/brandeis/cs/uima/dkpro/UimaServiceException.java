@@ -9,19 +9,19 @@ package edu.brandeis.cs.uima.dkpro;
  * @author shicq@cs.brandeis.edu
  *
  */
-public class DkProServiceException extends Exception {
+public class UimaServiceException extends Exception {
 
 	private static final long serialVersionUID = 7756634769548152198L;
 
-	public DkProServiceException() {
+	public UimaServiceException() {
 		super("Stanford-Web-Service-Exception:");
 	}
 	
-	public DkProServiceException(String message) {
+	public UimaServiceException(String message) {
 		super("Stanford-Web-Service-Exception:" + message);
 	}
 	
-	public DkProServiceException(String message, Throwable cause) {
+	public UimaServiceException(String message, Throwable cause) {
         super("Stanford-Web-Service-Exception:" + message, cause);
     }
 	

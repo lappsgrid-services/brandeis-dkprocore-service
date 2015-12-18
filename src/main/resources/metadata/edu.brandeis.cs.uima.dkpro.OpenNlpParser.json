@@ -2,7 +2,7 @@
   "$schema" : "http://vocab.lappsgrid.org/schema/service-schema-1.0.0.json",
   "name" : "edu.brandeis.cs.lappsgrid.stanford.corenlp.Parser",
   "version" : "2.0.0",
-  "description" : "Stanford CoreNLP Parser",
+  "description" : " DkPro OpenNLP Parser",
   "vendor" : "http://www.cs.brandeis.edu/",
   "allow" : "http://vocab.lappsgrid.org/ns/allow#any",
   "license" : "http://vocab.lappsgrid.org/ns/license#apache-2.0",
