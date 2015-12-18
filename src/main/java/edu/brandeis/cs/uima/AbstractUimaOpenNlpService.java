@@ -37,7 +37,7 @@ import static org.apache.uima.fit.factory.ExternalResourceFactory.createDependen
 import static org.apache.uima.fit.factory.JCasFactory.createJCasFromPath;
 
 
-public class AbstractUimaOpenNlpService {
+public abstract class AbstractUimaOpenNlpService extends AbstractUimaService{
 
     public static JCas opennlpuimaInitDoc() throws  Exception {
         JCas document = createJCasFromPath(

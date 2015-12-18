@@ -37,7 +37,7 @@ import static org.apache.uima.fit.factory.ExternalResourceFactory.createDependen
 import static org.apache.uima.fit.factory.JCasFactory.createJCasFromPath;
 
 
-public class AbstractUimaStanfordNlpService {
+public abstract class AbstractUimaStanfordNlpService extends AbstractUimaService {
 
     public static String stanfordnlp(StanfordCoreNLP pipeline, String txt)throws Exception {
         edu.stanford.nlp.pipeline.Annotation annotation = new edu.stanford.nlp.pipeline.Annotation(txt);

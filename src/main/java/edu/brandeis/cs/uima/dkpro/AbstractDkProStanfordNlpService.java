@@ -22,14 +22,19 @@ import opennlp.uima.tokenize.TokenizerModelResourceImpl;
 import opennlp.uima.util.UimaUtil;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
+import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.Feature;
 import org.apache.uima.cas.Type;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.resource.metadata.ResourceMetaData;
+import org.apache.uima.util.CasCreationUtils;
 import org.apache.uima.util.XmlCasSerializer;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
@@ -41,18 +46,17 @@ import static org.apache.uima.fit.factory.JCasFactory.createJCasFromPath;
 public class AbstractDkProStanfordNlpService {
 
 
-    public static void uimaDkProStanford() throws Exception{
-        CollectionReader reader = createReader(
-                TextReader.class,
-                TextReader.PARAM_SOURCE_LOCATION, "src/main/resources",
-                TextReader.PARAM_LANGUAGE, "en",
-                TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
+    public static void uimaDkProStanford(String txt) throws Exception{
         AnalysisEngineDescription seg = createEngineDescription(StanfordSegmenter.class);
         AnalysisEngineDescription tagger = createEngineDescription(StanfordPosTagger.class);
         AnalysisEngineDescription ner = createEngineDescription(StanfordNamedEntityRecognizer.class);
         AnalysisEngineDescription parser = createEngineDescription(StanfordParser.class);
         AnalysisEngineDescription writer = createEngineDescription(AnnotatorPipeline.NPNEWriter.class);
-        SimplePipeline.runPipeline(reader, seg, tagger, ner, writer);
+        final List<ResourceMetaData> metaData = new ArrayList<ResourceMetaData>();
+        final CAS document = CasCreationUtils.createCas(metaData);
+        document.setDocumentLanguage("en");
+        document.setDocumentText(txt);
+        SimplePipeline.runPipeline(document, seg, tagger, ner, writer);
     }
 
 }
