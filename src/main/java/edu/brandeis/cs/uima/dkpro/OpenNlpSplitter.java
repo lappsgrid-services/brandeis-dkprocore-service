@@ -8,9 +8,7 @@ import org.lappsgrid.serialization.lif.Container;
 
 import java.io.ByteArrayOutputStream;
 
-/**
- * Created by shi on 12/18/15.
- */
+
 public class OpenNlpSplitter extends AbstractUimaService {
 
     @Override
