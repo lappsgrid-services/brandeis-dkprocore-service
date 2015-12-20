@@ -10,7 +10,7 @@
 	<artifactId>umima.dkpro</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>umima.dkpro wrapper</name>
+	<name>umima dkpro wrapper</name>
 	<description>
         Web Services wrapping uima to create xml annotation
 	</description>
