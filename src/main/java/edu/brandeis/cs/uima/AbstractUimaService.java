@@ -1,10 +1,13 @@
 package edu.brandeis.cs.uima;
 
+import org.apache.commons.io.FileUtils;
 import org.lappsgrid.api.WebService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.util.Scanner;
 
 import org.apache.xerces.impl.io.UTF8Reader;
@@ -82,6 +85,20 @@ public abstract class AbstractUimaService implements WebService {
     public abstract String execute(Container json)
             throws UimaServiceException;
 
+
+    public String getTemplate() {
+        try {
+            String serviceName = this.getClass().getName();
+            String resName = "/template/" + serviceName + ".dsl";
+            String dsl = FileUtils.readFileToString(new File(this.getClass().getResource(resName).toURI()), "UTF-8");
+            return dsl;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 
     @Override
     public String getMetadata() {

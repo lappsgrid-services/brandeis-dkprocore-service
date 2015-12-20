@@ -25,16 +25,9 @@ public class DkProOpenNlpService extends AbstractDkProOpenNlpService {
     }
 
     String dsl = null;
+
     public DkProOpenNlpService(){
-        try {
-            String serviceName = this.getClass().getName();
-            String resName = "/template/" + serviceName + ".dsl";
-            dsl = FileUtils.readFileToString(new File(DkProOpenNlpService.class.getResource(resName).toURI()), "UTF-8");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+        dsl = getTemplate();
     }
 
     @Override
