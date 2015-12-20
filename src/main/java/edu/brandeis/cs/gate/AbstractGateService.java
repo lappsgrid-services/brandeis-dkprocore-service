@@ -2,8 +2,7 @@ package edu.brandeis.cs.gate;
 
 import edu.brandeis.cs.uima.AbstractWebService;
 import edu.brandeis.cs.uima.UimaServiceException;
-import gate.CorpusController;
-import gate.Gate;
+import gate.*;
 import gate.util.Out;
 import gate.util.persistence.PersistenceManager;
 import org.apache.commons.io.FileUtils;
@@ -20,6 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -64,5 +64,27 @@ public abstract class AbstractGateService extends AbstractWebService {
         return annieController;
     }
 
-
+    public static String gateExecute(CorpusController annieController, String txt) throws Exception {
+        // create a GATE corpus and add a document for each command-line
+        // argument
+        Corpus corpus = Factory.newCorpus("Prepare corpus ...");
+        Document document = Factory.newDocument(txt);
+        corpus.add(document);
+        // tell the pipeline about the corpus and run it
+        annieController.setCorpus(corpus);
+        Out.prln("Running GATE Controller...");
+        annieController.execute();
+        Out.prln("...GATE Controller complete");
+        // for each document, get an XML document with the
+        // person and location names added
+        Iterator iter = corpus.iterator();
+        while(iter.hasNext()) {
+            Document doc = (Document) iter.next();
+            Out.prln("<------------------");
+            Out.prln(doc.toXml());
+            Out.prln("------------------>");
+            return doc.toXml();
+        }
+        return null;
+    }
 }
