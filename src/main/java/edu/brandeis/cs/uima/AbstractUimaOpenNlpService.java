@@ -1,15 +1,5 @@
 package edu.brandeis.cs.uima;
 
-import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpNameFinder;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpSegmenter;
-import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordNamedEntityRecognizer;
-import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordParser;
-import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordPosTagger;
-import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordSegmenter;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import edu.stanford.nlp.pipeline.XMLOutputter;
 import opennlp.uima.namefind.NameFinder;
 import opennlp.uima.namefind.TokenNameFinderModelResourceImpl;
 import opennlp.uima.postag.POSModelResourceImpl;
@@ -23,8 +13,6 @@ import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.cas.Feature;
 import org.apache.uima.cas.Type;
-import org.apache.uima.collection.CollectionReader;
-import org.apache.uima.fit.pipeline.SimplePipeline;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.XmlCasSerializer;
 
@@ -37,7 +25,7 @@ import static org.apache.uima.fit.factory.ExternalResourceFactory.createDependen
 import static org.apache.uima.fit.factory.JCasFactory.createJCasFromPath;
 
 
-public abstract class AbstractUimaOpenNlpService extends AbstractUimaService{
+public abstract class AbstractUimaOpenNlpService extends AbstractWebService {
 
     public static JCas opennlpuimaInitDoc() throws  Exception {
         JCas document = createJCasFromPath(

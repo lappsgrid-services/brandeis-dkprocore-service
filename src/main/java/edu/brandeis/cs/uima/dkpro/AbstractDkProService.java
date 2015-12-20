@@ -1,6 +1,6 @@
 package edu.brandeis.cs.uima.dkpro;
 
-import edu.brandeis.cs.uima.AbstractUimaService;
+import edu.brandeis.cs.uima.AbstractWebService;
 import org.apache.uima.analysis_component.AnalysisComponent;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
@@ -15,7 +15,7 @@ import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDesc
 /**
  * Created by shi on 12/20/15.
  */
-public abstract class AbstractDkProService  extends AbstractUimaService {
+public abstract class AbstractDkProService  extends AbstractWebService {
 
 
     public static AnalysisEngine uimaDkProInit(Class<? extends AnalysisComponent> ... componentClasses) throws Exception {

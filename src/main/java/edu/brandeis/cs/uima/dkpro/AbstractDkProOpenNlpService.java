@@ -4,18 +4,13 @@ import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpNameFinder;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpParser;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpSegmenter;
-import edu.brandeis.cs.uima.AbstractUimaService;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.cas.CAS;
-import org.apache.uima.fit.pipeline.SimplePipeline;
-import org.apache.uima.resource.metadata.ResourceMetaData;
 import org.apache.uima.util.CasCreationUtils;
 import org.apache.uima.util.XmlCasSerializer;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 import static java.util.Arrays.asList;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;

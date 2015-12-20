@@ -23,10 +23,10 @@ import static org.lappsgrid.discriminator.Discriminators.Uri;
 
 
 
-public abstract class AbstractUimaService implements WebService {
+public abstract class AbstractWebService implements WebService {
 
     protected static final Logger logger = LoggerFactory
-            .getLogger(AbstractUimaService.class);
+            .getLogger(AbstractWebService.class);
 
     @Override
     /**
