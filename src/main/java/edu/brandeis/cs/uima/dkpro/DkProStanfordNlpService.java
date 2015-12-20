@@ -5,9 +5,7 @@ import edu.brandeis.cs.uima.UimaServiceException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.lappsgrid.serialization.lif.Container;
 
-/**
- * Created by shi on 12/20/15.
- */
+
 public class DkProStanfordNlpService extends AbstractDkProStanfordNlpService {
 
 
