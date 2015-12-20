@@ -1,25 +1,20 @@
 package edu.brandeis.cs.uima.dkpro;
 
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpSegmenter;
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordPosTagger;
 import edu.brandeis.cs.json.XmlToJson;
-import edu.brandeis.cs.uima.AbstractUimaService;
 import edu.brandeis.cs.uima.UimaServiceException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
-import org.apache.uima.jcas.JCas;
-import org.apache.uima.util.XmlCasSerializer;
 import org.lappsgrid.serialization.lif.Container;
 
-import java.io.ByteArrayOutputStream;
 
-
-public class OpenNlpSplitter extends AbstractDkProOpenNlpService {
+public class StanfordNlpPOSTagger extends AbstractDkProOpenNlpService {
 
 
     static AnalysisEngine aae;
 
     static {
         try {
-            aae = uimaDkProInit(OpenNlpSegmenter.class);
+            aae = uimaDkProInit(StanfordPosTagger.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -27,7 +22,7 @@ public class OpenNlpSplitter extends AbstractDkProOpenNlpService {
 
     String dsl = null;
 
-    public OpenNlpSplitter(){
+    public StanfordNlpPOSTagger(){
         dsl = getTemplate();
     }
 
