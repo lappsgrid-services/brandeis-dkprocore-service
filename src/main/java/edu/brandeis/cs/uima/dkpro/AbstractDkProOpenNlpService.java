@@ -22,7 +22,7 @@ import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 
 
-public abstract class AbstractDkProOpenNlpService  extends AbstractUimaService {
+public abstract class AbstractDkProOpenNlpService  extends AbstractDkProService {
 
     public static CAS uimaDkProOpennlpInitDoc(AnalysisEngine aae) throws  Exception {
         final CAS document = CasCreationUtils.createCas(asList(aae.getMetaData()));
