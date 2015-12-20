@@ -108,7 +108,23 @@ public class JsonJsonUtil {
         return sb.toString();
     }
 
-    public String _(Object obj){
+    public String s_(Object obj){
         return obj.toString();
+    }
+
+    public int i_(Object obj){
+        return Integer.parseInt(obj.toString());
+    }
+
+    public long l_(Object obj){
+        return Long.parseLong(obj.toString());
+    }
+
+    public float f_(Object obj){
+        return Float.parseFloat(obj.toString());
+    }
+
+    public boolean b_(Object obj){
+        return Boolean.parseBoolean(obj.toString());
     }
 }

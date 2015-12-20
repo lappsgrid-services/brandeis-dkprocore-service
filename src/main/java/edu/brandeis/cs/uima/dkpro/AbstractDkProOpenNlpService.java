@@ -1,8 +1,10 @@
 package edu.brandeis.cs.uima.dkpro;
 
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpNameFinder;
+import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpParser;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpSegmenter;
+import edu.brandeis.cs.uima.AbstractUimaService;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.cas.CAS;
@@ -20,7 +22,7 @@ import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 
 
-public class AbstractDkProOpenNlpService {
+public abstract class AbstractDkProOpenNlpService  extends AbstractUimaService {
 
     public static CAS uimaDkProOpennlpInitDoc(AnalysisEngine aae) throws  Exception {
         final CAS document = CasCreationUtils.createCas(asList(aae.getMetaData()));
@@ -31,10 +33,11 @@ public class AbstractDkProOpenNlpService {
     public static AnalysisEngine uimaDkProOpennlpInit() throws Exception {
         AnalysisEngineDescription seg = createEngineDescription(OpenNlpSegmenter.class);
         AnalysisEngineDescription tag = createEngineDescription(OpenNlpPosTagger.class);
+        AnalysisEngineDescription parser = createEngineDescription(OpenNlpParser.class);
         AnalysisEngineDescription ner = createEngineDescription(OpenNlpNameFinder.class);
 
         AnalysisEngineDescription aaeDesc = createEngineDescription(
-                seg, tag, ner);
+                seg, tag, parser, ner);
         AnalysisEngine aae = createEngine(aaeDesc);
         return aae;
     }

@@ -1,51 +1,36 @@
-package edu.brandeis.cs.uima.dkpro;
+package edu.brandeis.cs.json;
 
-import edu.brandeis.cs.json.JsonJsonUtil;
+
 import groovy.json.JsonBuilder;
 import groovy.lang.Binding;
 import groovy.lang.GroovyShell;
 import groovy.util.XmlSlurper;
 import org.apache.commons.io.FileUtils;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.IOException;
 import java.util.regex.Pattern;
 
-/**
- * OpenNlpSplitter Tester.
- *
- * @author <Authors name>
- * @version 1.0
- * @since <pre>Dec 19, 2015</pre>
- */
-public class OpenNlpSplitterTest {
+public class XmlToJson {
 
-    @Before
-    public void before() throws Exception {
-    }
 
-    @After
-    public void after() throws Exception {
-    }
+//    public static String transform(String xmlStr, File templateDslFile) throws ParserConfigurationException, SAXException, IOException {
+//
+//        String templateDsl = FileUtils.readFileToString(new File(OpenNlpSplitterTest.class.getResource("/template.dsl").toURI()), "UTF-8");
+//
+//
+//    }
 
-    /**
-     * Method: execute(Container json)
-     */
-    @Test
-    public void testExecute() throws Exception {
-
-        String templateDsl = FileUtils.readFileToString(new File(OpenNlpSplitterTest.class.getResource("/template.dsl").toURI()), "UTF-8");
+    public static String transform(String xmlStr, String templateDsl) throws ParserConfigurationException, SAXException, IOException {
         Binding binding = new Binding();
         GroovyShell shell = new GroovyShell(binding);
         XmlSlurper parser = new XmlSlurper();
-        Object xml = parser.parse(new File(OpenNlpSplitterTest.class.getResource("/dkpro_opennlp.xml").toURI()));
         JsonBuilder jb = new JsonBuilder();
         JsonJsonUtil util = new JsonJsonUtil();
-        System.out.println("------------------------------------");
+        Object xml = parser.parseText(xmlStr);
         System.out.println(xml);
-        System.out.println("------------------------------------");
         binding.setVariable(REF_XML_SOURCE, xml);
         binding.setVariable(REF_JSON_BUILDER, jb);
         binding.setVariable(REF_JSONJSON_UTIL, util);
@@ -53,7 +38,7 @@ public class OpenNlpSplitterTest {
         shell.evaluate(script);
         String js = jb.toPrettyString();
         System.out.println(js);
-
+        return js;
     }
 
     protected static String replacingWithSpace(String s, String keyword, String match) {
@@ -71,17 +56,10 @@ public class OpenNlpSplitterTest {
         if (!dsl.startsWith("{")) {
             dsl = String.format("{ %s }", dsl);
         }
-        // enable keywords foreach and select
-        // replace .foreach { by .collect{
         dsl = replacingWithSpace(dsl, KEYWORD_FOREACH, KEYWORD_FOREACH_MATCH);
-        // replace .select { by .findAll {
         dsl = replacingWithSpace(dsl, KEYWORD_SELECT, KEYWORD_SELECT_MATCH);
-
-        // replace global json
         dsl = replacing(dsl, KEYWORD_GLOBAL, KEYWORD_GLOBAL_MATCH);
-        // replace local json
         dsl = replacing(dsl, KEYWORD_LOCAL, KEYWORD_LOCAL_MATCH);
-        // replace util
         dsl = replacing(dsl, KEYWORD_UTIL, KEYWORD_UTIL_MATCH);
         return dsl;
     }
@@ -101,5 +79,4 @@ public class OpenNlpSplitterTest {
 
     public static final String KEYWORD_UTIL = "%.";
     public static final String KEYWORD_UTIL_MATCH = REF_JSONJSON_UTIL + ".";
-
-} 
+}
