@@ -30,14 +30,14 @@ public class XmlToJson {
         JsonBuilder jb = new JsonBuilder();
         JsonJsonUtil util = new JsonJsonUtil();
         Object xml = parser.parseText(xmlStr);
-        System.out.println(xml);
+//        System.out.println(xml);
         binding.setVariable(REF_XML_SOURCE, xml);
         binding.setVariable(REF_JSON_BUILDER, jb);
         binding.setVariable(REF_JSONJSON_UTIL, util);
         String script = String.format("%s.call(\n %s \n)", REF_JSON_BUILDER, filterJson(templateDsl));
         shell.evaluate(script);
         String js = jb.toPrettyString();
-        System.out.println(js);
+//        System.out.println(js);
         return js;
     }
 
