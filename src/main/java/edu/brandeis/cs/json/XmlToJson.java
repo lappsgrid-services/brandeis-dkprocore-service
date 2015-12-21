@@ -27,6 +27,7 @@ public class XmlToJson {
         Binding binding = new Binding();
         GroovyShell shell = new GroovyShell(binding);
         XmlSlurper parser = new XmlSlurper();
+        parser.setKeepIgnorableWhitespace(true);
         JsonBuilder jb = new JsonBuilder();
         JsonJsonUtil util = new JsonJsonUtil();
         Object xml = parser.parseText(xmlStr);
