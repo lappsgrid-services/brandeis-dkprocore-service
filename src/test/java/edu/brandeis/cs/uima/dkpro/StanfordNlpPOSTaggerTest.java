@@ -27,8 +27,10 @@ public void after() throws Exception {
 * 
 */ 
 @Test
-public void testExecute() throws Exception { 
-//TODO: Test goes here... 
+public void testExecute() throws Exception {
+    AbstractDkProService ws = new StanfordNlpPOSTagger();
+    String res = ws.execute("How are you today? Fine thank you.");
+    System.out.println(res);
 } 
 
 
