@@ -30,7 +30,6 @@ public class XmlToJson {
         JsonBuilder jb = new JsonBuilder();
         JsonJsonUtil util = new JsonJsonUtil();
         Object xml = parser.parseText(xmlStr);
-//        System.out.println(xml);
         binding.setVariable(REF_XML_SOURCE, xml);
         binding.setVariable(REF_JSON_BUILDER, jb);
         binding.setVariable(REF_JSONJSON_UTIL, util);

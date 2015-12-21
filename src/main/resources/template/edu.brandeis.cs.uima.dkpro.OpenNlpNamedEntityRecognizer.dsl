@@ -59,7 +59,7 @@
                     contains {
                       "http://vocab.lappsgrid.org/Token#pos" {
                           producer  "edu.brandeis.cs.uima.dkpro.OpenNlpNamedEntityRecognizer:0.0.1-SNAPSHOT"
-                          type  "tagger:stanford"
+                          type  "ner:dkpro_opennlp"
                       }
                     }
                 }

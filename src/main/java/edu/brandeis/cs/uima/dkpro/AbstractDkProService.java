@@ -4,7 +4,11 @@ import edu.brandeis.cs.uima.AbstractWebService;
 import org.apache.uima.analysis_component.AnalysisComponent;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
+import org.apache.uima.cas.CAS;
+import org.apache.uima.util.CasCreationUtils;
+import org.apache.uima.util.XmlCasSerializer;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +21,11 @@ import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDesc
  */
 public abstract class AbstractDkProService  extends AbstractWebService {
 
+    public static CAS uimaDkProInitDoc(AnalysisEngine aae) throws  Exception {
+        final CAS document = CasCreationUtils.createCas(asList(aae.getMetaData()));
+        document.setDocumentLanguage("en");
+        return document;
+    }
 
     public static AnalysisEngine uimaDkProInit(Class<? extends AnalysisComponent> ... componentClasses) throws Exception {
         List<AnalysisEngineDescription> aeds = new ArrayList<AnalysisEngineDescription>();
@@ -24,12 +33,6 @@ public abstract class AbstractDkProService  extends AbstractWebService {
             AnalysisEngineDescription aed = createEngineDescription(componentClass);
             aeds.add(aed);
         }
-
-//        AnalysisEngineDescription seg = createEngineDescription(StanfordSegmenter.class);
-//        AnalysisEngineDescription tagger = createEngineDescription(StanfordPosTagger.class);
-//        AnalysisEngineDescription parser = createEngineDescription(StanfordParser.class);
-//        AnalysisEngineDescription ner = createEngineDescription(StanfordNamedEntityRecognizer.class);
-//        AnalysisEngineDescription cor = createEngineDescription(StanfordCoreferenceResolver.class);
         String[] names = new String[aeds.size()];
         int i = 0;
         for (AnalysisEngineDescription aed : aeds) {
@@ -42,4 +45,18 @@ public abstract class AbstractDkProService  extends AbstractWebService {
         return aae;
     }
 
+    public static String uimaDkProXml(AnalysisEngine aae, String txt) throws Exception {
+        CAS document = uimaDkProInitDoc(aae);
+        document.setDocumentLanguage("en");
+        document.setDocumentText(txt);
+        aae.process(document);
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        XmlCasSerializer.serialize(document, output);
+        String xmlAnn = new String(output.toByteArray());
+        document.release();
+        System.out.println("<--------------------------------------------------");
+        System.out.println(xmlAnn);
+        System.out.println("-------------------------------------------------->");
+        return xmlAnn;
+    }
 }

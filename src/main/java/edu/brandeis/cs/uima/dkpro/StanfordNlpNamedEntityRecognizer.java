@@ -31,7 +31,7 @@ public class StanfordNlpNamedEntityRecognizer extends AbstractDkProOpenNlpServic
     public String execute(Container json) throws ServiceException {
         String txt = json.getText();
         try {
-            String xml = uimaDkProOpennlp(aae, txt);
+            String xml = uimaDkProXml(aae, txt);
             return XmlToJson.transform(xml, dsl);
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,6 +1,7 @@
 package edu.brandeis.cs.uima.dkpro;
 
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordPosTagger;
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordSegmenter;
 import edu.brandeis.cs.json.XmlToJson;
 import edu.brandeis.cs.uima.ServiceException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
@@ -14,7 +15,7 @@ public class StanfordNlpTokenizer extends AbstractDkProOpenNlpService {
 
     static {
         try {
-            aae = uimaDkProInit(StanfordPosTagger.class);
+            aae = uimaDkProInit(StanfordSegmenter.class, StanfordPosTagger.class);
             System.out.println("StanfordNlpTokenizer Init...");
         } catch (Exception e) {
             e.printStackTrace();
@@ -31,7 +32,7 @@ public class StanfordNlpTokenizer extends AbstractDkProOpenNlpService {
     public String execute(Container json) throws ServiceException {
         String txt = json.getText();
         try {
-            String xml = uimaDkProOpennlp(aae, txt);
+            String xml = uimaDkProXml(aae, txt);
             return XmlToJson.transform(xml, dsl);
         } catch (Exception e) {
             e.printStackTrace();

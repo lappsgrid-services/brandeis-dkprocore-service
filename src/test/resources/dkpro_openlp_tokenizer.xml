@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:pos="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos.ecore"
+         xmlns:tcas="http:///uima/tcas.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore"
+         xmlns:tweet="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos/tweet.ecore"
+         xmlns:morph="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/morph.ecore"
+         xmlns:dependency="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/dependency.ecore"
+         xmlns:type5="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type.ecore"
+         xmlns:type2="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore"
+         xmlns:type3="http:///de/tudarmstadt/ukp/dkpro/core/api/ner/type.ecore"
+         xmlns:type4="http:///de/tudarmstadt/ukp/dkpro/core/api/segmentation/type.ecore"
+         xmlns:type="http:///de/tudarmstadt/ukp/dkpro/core/api/coref/type.ecore"
+         xmlns:constituent="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/constituent.ecore"
+         xmlns:chunk="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/chunk.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <cas:Sofa xmi:id="6" sofaNum="1" sofaID="_InitialView" mimeType="text"
+              sofaString="How are you today? Fine thank you."/>
+    <tcas:DocumentAnnotation xmi:id="1" sofa="6" begin="0" end="34" language="en"/>
+    <type2:TagsetDescription xmi:id="13" sofa="6" begin="0" end="34"
+                             layer="de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS" name="ptb"
+                             tags="20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98 100 102 104 106 108"/>
+    <type2:TagDescription xmi:id="108" name="``"/>
+    <type2:TagDescription xmi:id="106" name="WRB"/>
+    <type2:TagDescription xmi:id="104" name="WP$"/>
+    <type2:TagDescription xmi:id="102" name="WP"/>
+    <type2:TagDescription xmi:id="100" name="WDT"/>
+    <type2:TagDescription xmi:id="98" name="VBZ"/>
+    <type2:TagDescription xmi:id="96" name="VBP"/>
+    <type2:TagDescription xmi:id="94" name="VBN"/>
+    <type2:TagDescription xmi:id="92" name="VBG"/>
+    <type2:TagDescription xmi:id="90" name="VBD"/>
+    <type2:TagDescription xmi:id="88" name="VB"/>
+    <type2:TagDescription xmi:id="86" name="UH"/>
+    <type2:TagDescription xmi:id="84" name="TO"/>
+    <type2:TagDescription xmi:id="82" name="SYM"/>
+    <type2:TagDescription xmi:id="80" name="RP"/>
+    <type2:TagDescription xmi:id="78" name="RBS"/>
+    <type2:TagDescription xmi:id="76" name="RBR"/>
+    <type2:TagDescription xmi:id="74" name="RB"/>
+    <type2:TagDescription xmi:id="72" name="PRP$"/>
+    <type2:TagDescription xmi:id="70" name="PRP"/>
+    <type2:TagDescription xmi:id="68" name="POS"/>
+    <type2:TagDescription xmi:id="66" name="PDT"/>
+    <type2:TagDescription xmi:id="64" name="NNS"/>
+    <type2:TagDescription xmi:id="62" name="NNPS"/>
+    <type2:TagDescription xmi:id="60" name="NNP"/>
+    <type2:TagDescription xmi:id="58" name="NN"/>
+    <type2:TagDescription xmi:id="56" name="MD"/>
+    <type2:TagDescription xmi:id="54" name="LS"/>
+    <type2:TagDescription xmi:id="52" name="JJS"/>
+    <type2:TagDescription xmi:id="50" name="JJR"/>
+    <type2:TagDescription xmi:id="48" name="JJ"/>
+    <type2:TagDescription xmi:id="46" name="IN"/>
+    <type2:TagDescription xmi:id="44" name="FW"/>
+    <type2:TagDescription xmi:id="42" name="EX"/>
+    <type2:TagDescription xmi:id="40" name="DT"/>
+    <type2:TagDescription xmi:id="38" name="CD"/>
+    <type2:TagDescription xmi:id="36" name="CC"/>
+    <type2:TagDescription xmi:id="34" name=":"/>
+    <type2:TagDescription xmi:id="32" name="."/>
+    <type2:TagDescription xmi:id="30" name="-RRB-"/>
+    <type2:TagDescription xmi:id="28" name="-LRB-"/>
+    <type2:TagDescription xmi:id="26" name=","/>
+    <type2:TagDescription xmi:id="24" name="''"/>
+    <type2:TagDescription xmi:id="22" name="$"/>
+    <type2:TagDescription xmi:id="20" name="#"/>
+    <cas:View sofa="6" members="1 13"/>
+</xmi:XMI>
