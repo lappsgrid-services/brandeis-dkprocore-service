@@ -29,7 +29,7 @@ public void after() throws Exception {
 @Test
 public void testExecute() throws Exception {
     AbstractDkProService ws = new StanfordNlpNamedEntityRecognizer();
-    String res = ws.execute("How are you today? Fine thank you.");
+    String res = ws.execute("How are you today, Mike? Fine thank you.");
     System.out.println(res);
 } 
 

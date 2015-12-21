@@ -3,41 +3,22 @@
     def targetText = %.s_(&:Sofa.@sofaString)
     def targetAnnotations = []
 
-    targetAnnotations += &:Sentence.foreach {
+    targetAnnotations += &:"*".findAll{&.name()=="Person" || &.name()=="Organization"||&.name()=="Date"||&.name()=="Location"}.foreach {
           def targetId = %.s_(&."@xmi:id")
           def targetBegin = %.i_(&.@begin)
           def targetEnd = %.i_(&.@end)
+          def name = &.name()
+          def targetValue = %.toCapital(%.s_(&.@value))
           [
             id: targetId,
             start: targetBegin,
             end:  targetEnd,
-            "@type":  "http://vocab.lappsgrid.org/Sentence",
+            "@type":  "http://vocab.lappsgrid.org/"+%.toCapital(name),
             features: [
-                sentence: targetText.substring(targetBegin, targetEnd)
+                word: targetText.substring(targetBegin, targetEnd)
             ]
           ]
     }
-
-
-    targetAnnotations += &:Token.foreach {
-          def targetId = %.s_(&."@xmi:id")
-          def targetBegin = %.i_(&.@begin)
-          def targetEnd = %.i_(&.@end)
-          def pos = %.s_(&.@pos)
-          def targetPosTag = &:"*".findAll{ &."@xmi:id" == pos }.foreach{%.s_(&.@PosValue)}[0]
-          [
-            id: targetId,
-            start: targetBegin,
-            end:  targetEnd,
-            "@type":  "http://vocab.lappsgrid.org/Token",
-            features: [
-                word: targetText.substring(targetBegin, targetEnd),
-                pos: (targetPosTag)
-            ]
-          ]
-    }
-
-
 
 
     discriminator  "http://vocab.lappsgrid.org/ns/media/jsonld"

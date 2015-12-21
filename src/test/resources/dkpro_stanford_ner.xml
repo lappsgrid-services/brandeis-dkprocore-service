@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:pos="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos.ecore"
+         xmlns:tcas="http:///uima/tcas.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore"
+         xmlns:tweet="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos/tweet.ecore"
+         xmlns:morph="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/morph.ecore"
+         xmlns:dependency="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/dependency.ecore"
+         xmlns:type5="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type.ecore"
+         xmlns:type2="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore"
+         xmlns:type3="http:///de/tudarmstadt/ukp/dkpro/core/api/ner/type.ecore"
+         xmlns:type4="http:///de/tudarmstadt/ukp/dkpro/core/api/segmentation/type.ecore"
+         xmlns:type="http:///de/tudarmstadt/ukp/dkpro/core/api/coref/type.ecore"
+         xmlns:constituent="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/constituent.ecore"
+         xmlns:chunk="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/chunk.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <cas:Sofa xmi:id="6" sofaNum="1" sofaID="_InitialView" mimeType="text"
+              sofaString="How are you today, Mike? Fine thank you."/>
+    <tcas:DocumentAnnotation xmi:id="1" sofa="6" begin="0" end="40" language="en"/>
+    <type4:Token xmi:id="13" sofa="6" begin="0" end="3" parent="630" pos="267"/>
+    <type4:Token xmi:id="22" sofa="6" begin="4" end="7" parent="646" pos="272"/>
+    <type4:Token xmi:id="31" sofa="6" begin="8" end="11" parent="659" pos="277"/>
+    <type4:Token xmi:id="40" sofa="6" begin="12" end="17" parent="675" pos="282"/>
+    <type4:Token xmi:id="49" sofa="6" begin="17" end="18" parent="696" pos="287"/>
+    <type4:Token xmi:id="58" sofa="6" begin="19" end="23" parent="709" pos="292"/>
+    <type4:Token xmi:id="67" sofa="6" begin="23" end="24" parent="622" pos="297"/>
+    <type4:Token xmi:id="76" sofa="6" begin="25" end="29" parent="773" pos="302"/>
+    <type4:Token xmi:id="85" sofa="6" begin="30" end="35" parent="789" pos="307"/>
+    <type4:Token xmi:id="94" sofa="6" begin="36" end="39" parent="802" pos="312"/>
+    <type4:Token xmi:id="103" sofa="6" begin="39" end="40" parent="765" pos="317"/>
+    <type4:Sentence xmi:id="112" sofa="6" begin="0" end="24"/>
+    <type4:Sentence xmi:id="116" sofa="6" begin="25" end="40"/>
+    <type2:TagsetDescription xmi:id="120" sofa="6" begin="0" end="40"
+                             layer="de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS" name="ptb"
+                             tags="127 129 131 133 135 137 139 141 143 145 147 149 151 153 155 157 159 161 163 165 167 169 171 173 175 177 179 181 183 185 187 189 191 193 195 197 199 201 203 205 207 209 211 213 215 217"/>
+    <type2:TagsetDescription xmi:id="322" sofa="6" begin="0" end="40"
+                             layer="de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency"
+                             name="stanford341"
+                             tags="329 331 333 335 337 339 341 343 345 347 349 351 353 355 357 359 361 363 365 367 369 371 373 375 377 379 381 383 385 387 389 391 393 395 397 399 401 403 405 407 409 411 413 415 417 419 421 423 425 427 429 431 433 435 437"/>
+    <type2:TagsetDescription xmi:id="496" sofa="6" begin="0" end="40"
+                             layer="de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.Constituent" name="ptb"
+                             tags="503 505 507 509 511 513 515 517 519 521 523 525 527 529 531 533 535 537 539 541 543 545 547 549 551 553 555"/>
+    <pos:ADV xmi:id="267" sofa="6" begin="0" end="3" PosValue="WRB"/>
+    <pos:V xmi:id="272" sofa="6" begin="4" end="7" PosValue="VBP"/>
+    <pos:V xmi:id="307" sofa="6" begin="30" end="35" PosValue="VB"/>
+    <pos:PR xmi:id="277" sofa="6" begin="8" end="11" PosValue="PRP"/>
+    <pos:PR xmi:id="312" sofa="6" begin="36" end="39" PosValue="PRP"/>
+    <pos:NN xmi:id="282" sofa="6" begin="12" end="17" PosValue="NN"/>
+    <pos:PUNC xmi:id="287" sofa="6" begin="17" end="18" PosValue=","/>
+    <pos:PUNC xmi:id="297" sofa="6" begin="23" end="24" PosValue="."/>
+    <pos:PUNC xmi:id="317" sofa="6" begin="39" end="40" PosValue="."/>
+    <pos:NP xmi:id="292" sofa="6" begin="19" end="23" PosValue="NNP"/>
+    <pos:NP xmi:id="302" sofa="6" begin="25" end="29" PosValue="NNP"/>
+    <dependency:ADVMOD xmi:id="586" sofa="6" begin="0" end="3" Governor="22" Dependent="13" DependencyType="advmod"/>
+    <dependency:NSUBJ xmi:id="593" sofa="6" begin="8" end="11" Governor="22" Dependent="31" DependencyType="nsubj"/>
+    <dependency:NSUBJ xmi:id="743" sofa="6" begin="25" end="29" Governor="85" Dependent="76" DependencyType="nsubj"/>
+    <dependency:DEP xmi:id="600" sofa="6" begin="12" end="17" Governor="22" Dependent="40" DependencyType="dep"/>
+    <dependency:DEP xmi:id="607" sofa="6" begin="19" end="23" Governor="22" Dependent="58" DependencyType="dep"/>
+    <constituent:WHADVP xmi:id="630" sofa="6" begin="0" end="3" constituentType="WHADVP" parent="622" children="13"/>
+    <constituent:NP xmi:id="659" sofa="6" begin="8" end="11" constituentType="NP" parent="646" children="31"/>
+    <constituent:NP xmi:id="675" sofa="6" begin="12" end="17" constituentType="NP" parent="646" children="40"/>
+    <constituent:NP xmi:id="709" sofa="6" begin="19" end="23" constituentType="NP" parent="696" children="58"/>
+    <constituent:NP xmi:id="773" sofa="6" begin="25" end="29" constituentType="NP" parent="765" children="76"/>
+    <constituent:NP xmi:id="802" sofa="6" begin="36" end="39" constituentType="NP" parent="789" children="94"/>
+    <constituent:SQ xmi:id="646" sofa="6" begin="4" end="17" constituentType="SQ" parent="622" children="22 659 675"/>
+    <constituent:FRAG xmi:id="696" sofa="6" begin="17" end="23" constituentType="FRAG" parent="622" children="49 709"/>
+    <constituent:SBARQ xmi:id="622" sofa="6" begin="0" end="24" constituentType="SBARQ" parent="614"
+                       children="630 646 696 67"/>
+    <constituent:ROOT xmi:id="614" sofa="6" begin="0" end="24" constituentType="ROOT" children="622"/>
+    <constituent:ROOT xmi:id="757" sofa="6" begin="25" end="40" constituentType="ROOT" children="765"/>
+    <dependency:DOBJ xmi:id="750" sofa="6" begin="36" end="39" Governor="85" Dependent="94" DependencyType="dobj"/>
+    <constituent:VP xmi:id="789" sofa="6" begin="30" end="39" constituentType="VP" parent="765" children="85 802"/>
+    <constituent:S xmi:id="765" sofa="6" begin="25" end="40" constituentType="S" parent="757" children="773 789 103"/>
+    <type3:Person xmi:id="835" sofa="6" begin="19" end="23" value="PERSON"/>
+    <type2:TagDescription xmi:id="555" name="X"/>
+    <type2:TagDescription xmi:id="553" name="WHPP"/>
+    <type2:TagDescription xmi:id="551" name="WHNP"/>
+    <type2:TagDescription xmi:id="549" name="WHADVP"/>
+    <type2:TagDescription xmi:id="547" name="WHADJP"/>
+    <type2:TagDescription xmi:id="545" name="VP"/>
+    <type2:TagDescription xmi:id="543" name="UCP"/>
+    <type2:TagDescription xmi:id="541" name="SQ"/>
+    <type2:TagDescription xmi:id="539" name="SINV"/>
+    <type2:TagDescription xmi:id="537" name="SBARQ"/>
+    <type2:TagDescription xmi:id="535" name="SBAR"/>
+    <type2:TagDescription xmi:id="533" name="S"/>
+    <type2:TagDescription xmi:id="531" name="RRC"/>
+    <type2:TagDescription xmi:id="529" name="ROOT"/>
+    <type2:TagDescription xmi:id="527" name="QP"/>
+    <type2:TagDescription xmi:id="525" name="PRT"/>
+    <type2:TagDescription xmi:id="523" name="PRN"/>
+    <type2:TagDescription xmi:id="521" name="PP"/>
+    <type2:TagDescription xmi:id="519" name="NX"/>
+    <type2:TagDescription xmi:id="517" name="NP"/>
+    <type2:TagDescription xmi:id="515" name="NAC"/>
+    <type2:TagDescription xmi:id="513" name="LST"/>
+    <type2:TagDescription xmi:id="511" name="INTJ"/>
+    <type2:TagDescription xmi:id="509" name="FRAG"/>
+    <type2:TagDescription xmi:id="507" name="CONJP"/>
+    <type2:TagDescription xmi:id="505" name="ADVP"/>
+    <type2:TagDescription xmi:id="503" name="ADJP"/>
+    <type2:TagDescription xmi:id="437" name="xcomp"/>
+    <type2:TagDescription xmi:id="435" name="vmod"/>
+    <type2:TagDescription xmi:id="433" name="tmod"/>
+    <type2:TagDescription xmi:id="431" name="subj"/>
+    <type2:TagDescription xmi:id="429" name="sdep"/>
+    <type2:TagDescription xmi:id="427" name="rel"/>
+    <type2:TagDescription xmi:id="425" name="ref"/>
+    <type2:TagDescription xmi:id="423" name="rcmod"/>
+    <type2:TagDescription xmi:id="421" name="quantmod"/>
+    <type2:TagDescription xmi:id="419" name="punct"/>
+    <type2:TagDescription xmi:id="417" name="prt"/>
+    <type2:TagDescription xmi:id="415" name="prep"/>
+    <type2:TagDescription xmi:id="413" name="predet"/>
+    <type2:TagDescription xmi:id="411" name="pred"/>
+    <type2:TagDescription xmi:id="409" name="preconj"/>
+    <type2:TagDescription xmi:id="407" name="possessive"/>
+    <type2:TagDescription xmi:id="405" name="poss"/>
+    <type2:TagDescription xmi:id="403" name="pobj"/>
+    <type2:TagDescription xmi:id="401" name="pcomp"/>
+    <type2:TagDescription xmi:id="399" name="parataxis"/>
+    <type2:TagDescription xmi:id="397" name="obj"/>
+    <type2:TagDescription xmi:id="395" name="number"/>
+    <type2:TagDescription xmi:id="393" name="num"/>
+    <type2:TagDescription xmi:id="391" name="nsubjpass"/>
+    <type2:TagDescription xmi:id="389" name="nsubj"/>
+    <type2:TagDescription xmi:id="387" name="npadvmod"/>
+    <type2:TagDescription xmi:id="385" name="nn"/>
+    <type2:TagDescription xmi:id="383" name="neg"/>
+    <type2:TagDescription xmi:id="381" name="mwe"/>
+    <type2:TagDescription xmi:id="379" name="mod"/>
+    <type2:TagDescription xmi:id="377" name="mark"/>
+    <type2:TagDescription xmi:id="375" name="iobj"/>
+    <type2:TagDescription xmi:id="373" name="gov"/>
+    <type2:TagDescription xmi:id="371" name="goeswith"/>
+    <type2:TagDescription xmi:id="369" name="expl"/>
+    <type2:TagDescription xmi:id="367" name="dobj"/>
+    <type2:TagDescription xmi:id="365" name="discourse"/>
+    <type2:TagDescription xmi:id="363" name="det"/>
+    <type2:TagDescription xmi:id="361" name="dep"/>
+    <type2:TagDescription xmi:id="359" name="csubjpass"/>
+    <type2:TagDescription xmi:id="357" name="csubj"/>
+    <type2:TagDescription xmi:id="355" name="cop"/>
+    <type2:TagDescription xmi:id="353" name="conj"/>
+    <type2:TagDescription xmi:id="351" name="comp"/>
+    <type2:TagDescription xmi:id="349" name="ccomp"/>
+    <type2:TagDescription xmi:id="347" name="cc"/>
+    <type2:TagDescription xmi:id="345" name="auxpass"/>
+    <type2:TagDescription xmi:id="343" name="aux"/>
+    <type2:TagDescription xmi:id="341" name="arg"/>
+    <type2:TagDescription xmi:id="339" name="appos"/>
+    <type2:TagDescription xmi:id="337" name="amod"/>
+    <type2:TagDescription xmi:id="335" name="agent"/>
+    <type2:TagDescription xmi:id="333" name="advmod"/>
+    <type2:TagDescription xmi:id="331" name="advcl"/>
+    <type2:TagDescription xmi:id="329" name="acomp"/>
+    <type2:TagDescription xmi:id="217" name="``"/>
+    <type2:TagDescription xmi:id="215" name="WRB"/>
+    <type2:TagDescription xmi:id="213" name="WP$"/>
+    <type2:TagDescription xmi:id="211" name="WP"/>
+    <type2:TagDescription xmi:id="209" name="WDT"/>
+    <type2:TagDescription xmi:id="207" name="VBZ"/>
+    <type2:TagDescription xmi:id="205" name="VBP"/>
+    <type2:TagDescription xmi:id="203" name="VBN"/>
+    <type2:TagDescription xmi:id="201" name="VBG"/>
+    <type2:TagDescription xmi:id="199" name="VBD"/>
+    <type2:TagDescription xmi:id="197" name="VB"/>
+    <type2:TagDescription xmi:id="195" name="UH"/>
+    <type2:TagDescription xmi:id="193" name="TO"/>
+    <type2:TagDescription xmi:id="191" name="SYM"/>
+    <type2:TagDescription xmi:id="189" name="RP"/>
+    <type2:TagDescription xmi:id="187" name="RBS"/>
+    <type2:TagDescription xmi:id="185" name="RBR"/>
+    <type2:TagDescription xmi:id="183" name="RB"/>
+    <type2:TagDescription xmi:id="181" name="PRP$"/>
+    <type2:TagDescription xmi:id="179" name="PRP"/>
+    <type2:TagDescription xmi:id="177" name="POS"/>
+    <type2:TagDescription xmi:id="175" name="PDT"/>
+    <type2:TagDescription xmi:id="173" name="NNS"/>
+    <type2:TagDescription xmi:id="171" name="NNPS"/>
+    <type2:TagDescription xmi:id="169" name="NNP"/>
+    <type2:TagDescription xmi:id="167" name="NN"/>
+    <type2:TagDescription xmi:id="165" name="MD"/>
+    <type2:TagDescription xmi:id="163" name="LS"/>
+    <type2:TagDescription xmi:id="161" name="JJS"/>
+    <type2:TagDescription xmi:id="159" name="JJR"/>
+    <type2:TagDescription xmi:id="157" name="JJ"/>
+    <type2:TagDescription xmi:id="155" name="IN"/>
+    <type2:TagDescription xmi:id="153" name="FW"/>
+    <type2:TagDescription xmi:id="151" name="EX"/>
+    <type2:TagDescription xmi:id="149" name="DT"/>
+    <type2:TagDescription xmi:id="147" name="CD"/>
+    <type2:TagDescription xmi:id="145" name="CC"/>
+    <type2:TagDescription xmi:id="143" name=":"/>
+    <type2:TagDescription xmi:id="141" name=".$$."/>
+    <type2:TagDescription xmi:id="139" name="."/>
+    <type2:TagDescription xmi:id="137" name="-RRB-"/>
+    <type2:TagDescription xmi:id="135" name="-LRB-"/>
+    <type2:TagDescription xmi:id="133" name=","/>
+    <type2:TagDescription xmi:id="131" name="''"/>
+    <type2:TagDescription xmi:id="129" name="$"/>
+    <type2:TagDescription xmi:id="127" name="#"/>
+    <cas:View sofa="6"
+              members="1 13 22 31 40 49 58 67 76 85 94 103 112 116 120 322 496 267 272 307 277 312 282 287 297 317 292 302 586 593 743 600 607 630 659 675 709 773 802 646 696 622 614 757 750 789 765 835"/>
+</xmi:XMI>

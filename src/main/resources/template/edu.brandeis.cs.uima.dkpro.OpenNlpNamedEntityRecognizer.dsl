@@ -2,7 +2,6 @@
 
     def targetText = %.s_(&:Sofa.@sofaString)
     def targetAnnotations = []
-
     targetAnnotations += &:NamedEntity.foreach {
           def targetId = %.s_(&."@xmi:id")
           def targetBegin = %.i_(&.@begin)
@@ -18,6 +17,7 @@
             ]
           ]
     }
+
 
     discriminator  "http://vocab.lappsgrid.org/ns/media/jsonld"
 
