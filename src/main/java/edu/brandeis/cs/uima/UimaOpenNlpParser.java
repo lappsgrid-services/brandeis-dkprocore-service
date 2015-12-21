@@ -14,6 +14,7 @@ public class UimaOpenNlpParser extends UimaOpenNlpService {
     static {
         try {
             aae = opennlpuimaInit();
+            System.out.println("Init OpenNLP Uima!");
         } catch (Exception e) {
             e.printStackTrace();
         }
