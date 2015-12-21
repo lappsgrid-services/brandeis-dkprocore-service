@@ -14,6 +14,7 @@ public class OpenNlpParser extends AbstractDkProOpenNlpService {
     static {
         try {
             aae = uimaDkProInit(de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpParser.class);
+            System.out.println("OpenNlpParser Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }

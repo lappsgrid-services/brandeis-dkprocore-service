@@ -8,13 +8,12 @@ import org.lappsgrid.serialization.lif.Container;
 
 
 public class OpenNlpSplitter extends AbstractDkProOpenNlpService {
-
-
     static AnalysisEngine aae;
 
     static {
         try {
             aae = uimaDkProInit(OpenNlpSegmenter.class);
+            System.out.println("OpenNlpSplitter Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }

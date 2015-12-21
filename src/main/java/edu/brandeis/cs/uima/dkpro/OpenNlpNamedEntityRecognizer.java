@@ -14,6 +14,7 @@ public class OpenNlpNamedEntityRecognizer extends AbstractDkProOpenNlpService {
     static {
         try {
             aae = uimaDkProInit(de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpNameFinder.class);
+            System.out.println("OpenNlpNamedEntityRecognizer Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }

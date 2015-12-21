@@ -15,6 +15,7 @@ public class StanfordNlpSplitter extends AbstractDkProOpenNlpService {
     static {
         try {
             aae = uimaDkProInit(StanfordSegmenter.class);
+            System.out.println("StanfordNlpSplitter Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }

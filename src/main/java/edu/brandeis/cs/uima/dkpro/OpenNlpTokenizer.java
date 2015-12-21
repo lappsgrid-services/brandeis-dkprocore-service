@@ -15,6 +15,7 @@ public class OpenNlpTokenizer extends AbstractDkProOpenNlpService {
     static {
         try {
             aae = uimaDkProInit(OpenNlpPosTagger.class);
+            System.out.println("OpenNlpTokenizer Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }

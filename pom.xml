@@ -16,6 +16,13 @@
 	</description>
 
 
+    <repositories>
+        <repository>
+            <id>dkpro</id>
+            <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-model-releases-local/</url>
+        </repository>
+    </repositories>
+
     <properties>
         <lapps.all>2.2.0</lapps.all>
         <lapps.discriminator>2.2.0</lapps.discriminator>
@@ -71,6 +78,14 @@
             <artifactId>de.tudarmstadt.ukp.dkpro.core.opennlp-asl</artifactId>
             <version>1.7.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.opennlp-model-sentence-en-maxent</artifactId>
+            <version>20120616.1</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.apache.opennlp</groupId>
             <artifactId>opennlp-uima</artifactId>

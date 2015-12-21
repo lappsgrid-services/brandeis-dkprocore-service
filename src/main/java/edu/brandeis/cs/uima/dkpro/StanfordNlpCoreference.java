@@ -15,6 +15,7 @@ public class StanfordNlpCoreference extends AbstractDkProOpenNlpService {
     static {
         try {
             aae = uimaDkProInit(StanfordCoreferenceResolver.class);
+            System.out.println("StanfordCoreferenceResolver Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }

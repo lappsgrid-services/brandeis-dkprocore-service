@@ -15,6 +15,7 @@ public class StanfordNlpParser extends AbstractDkProOpenNlpService {
     static {
         try {
             aae = uimaDkProInit(StanfordParser.class);
+            System.out.println("StanfordParser Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }

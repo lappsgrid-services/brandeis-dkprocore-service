@@ -15,6 +15,7 @@ public class StanfordNlpPOSTagger extends AbstractDkProOpenNlpService {
     static {
         try {
             aae = uimaDkProInit(StanfordPosTagger.class);
+            System.out.println("StanfordNlpPOSTagger Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }

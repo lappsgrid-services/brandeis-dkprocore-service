@@ -15,6 +15,7 @@ public class StanfordNlpNamedEntityRecognizer extends AbstractDkProOpenNlpServic
     static {
         try {
             aae = uimaDkProInit(StanfordNamedEntityRecognizer.class);
+            System.out.println("StanfordNamedEntityRecognizer Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }

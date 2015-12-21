@@ -15,6 +15,7 @@ public class StanfordNlpTokenizer extends AbstractDkProOpenNlpService {
     static {
         try {
             aae = uimaDkProInit(StanfordPosTagger.class);
+            System.out.println("StanfordNlpTokenizer Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }

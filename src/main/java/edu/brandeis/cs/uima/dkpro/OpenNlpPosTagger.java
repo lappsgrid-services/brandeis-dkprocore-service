@@ -15,6 +15,7 @@ public class OpenNlpPOSTagger extends AbstractDkProOpenNlpService {
     static {
         try {
             aae = uimaDkProInit(OpenNlpPosTagger.class);
+            System.out.println("OpenNlpPOSTagger Init...");
         } catch (Exception e) {
             e.printStackTrace();
         }
