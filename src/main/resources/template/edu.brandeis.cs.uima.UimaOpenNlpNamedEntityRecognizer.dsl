@@ -58,8 +58,8 @@
                 metadata {
                     contains {
                       "http://vocab.lappsgrid.org/Token#pos" {
-                          producer  "edu.brandeis.cs.lappsgrid.stanford.corenlp.POSTagger:2.0.1-SNAPSHOT"
-                          type  "tagger:stanford"
+                          producer  "edu.brandeis.cs.uima.UimaOpenNlpNamedEntityRecognizer:0.0.1-SNAPSHOT"
+                          type  "ner:uima_opennlp"
                       }
                     }
                 }
