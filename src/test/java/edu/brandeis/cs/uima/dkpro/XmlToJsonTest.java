@@ -40,7 +40,7 @@ public class XmlToJsonTest {
         Binding binding = new Binding();
         GroovyShell shell = new GroovyShell(binding);
         XmlSlurper parser = new XmlSlurper();
-        Object xml = parser.parse(new File(XmlToJsonTest.class.getResource("/dkpro_opennlp.xml").toURI()));
+        Object xml = parser.parse(new File(XmlToJsonTest.class.getResource("/dkpro_opennlp_splitter.xml").toURI()));
         JsonBuilder jb = new JsonBuilder();
         JsonJsonUtil util = new JsonJsonUtil();
         System.out.println("------------------------------------");

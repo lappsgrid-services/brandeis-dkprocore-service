@@ -13,6 +13,10 @@ public class JsonJsonUtil {
         return obj == null;
     }
 
+    public boolean isEmpty(Object obj) {
+        return isNull(obj) || obj.toString().trim().length() == 0;
+    }
+
     public boolean has(Object obj, String s) {
         if (obj == null)
             return false;

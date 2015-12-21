@@ -37,8 +37,43 @@
           ]
     }
 
+    targetAnnotations += &:ROOT.foreach {
+          def targetId = %.s_(&."@xmi:id")
+          def targetBegin = %.i_(&.@begin)
+          def targetEnd = %.i_(&.@end)
+          def targetSentence = targetText.substring(targetBegin, targetEnd)
+          def targetConstituents = &:"*".findAll{ &."@constituentType"!="" && %.i_(&.@begin) >= targetBegin && %.i_(&.@end) <= targetEnd}.foreach{%.s_(&."@xmi:id")}
+         [
+            id: targetId,
+            start: targetBegin,
+            end:  targetEnd,
+            "@type":  "http://vocab.lappsgrid.org/PhraseStructure",
+            features: [
+                sentence: targetSentence,
+                penntree: targetText.substring(targetBegin, targetEnd),
+                constituents: (targetConstituents)
+            ]
+          ]
+    }
 
-
+    targetAnnotations += &:"*".findAll{ &."@constituentType"!=""}.foreach {
+          def targetId = %.s_(&."@xmi:id")
+          def targetBegin = %.i_(&.@begin)
+          def targetEnd = %.i_(&.@end)
+          def targetSentence = targetText.substring(targetBegin, targetEnd)
+          def children = %.s_(&.@children).split("\\s")
+          def tagetLabel = %.s_(&.@constituentType)
+         [
+            id: targetId,
+            start: targetBegin,
+            end:  targetEnd,
+            "@type":  "http://vocab.lappsgrid.org/Constituent",
+            label : tagetLabel,
+            features: [
+                children: (children)
+            ]
+         ]
+    }
 
     discriminator  "http://vocab.lappsgrid.org/ns/media/jsonld"
 
@@ -56,12 +91,20 @@
         views ([
             {
                 metadata {
-                    contains {
-                      "http://vocab.lappsgrid.org/Token#pos" {
-                          producer  "edu.brandeis.cs.uima.dkpro.OpenNlpParser:0.0.1-SNAPSHOT"
-                          type  "parser:dkpro_opennlp"
-                      }
+                  contains  {
+                    "http://vocab.lappsgrid.org/Token"  {
+                      producer "eedu.brandeis.cs.uima.dkpro.OpenNlpParser:0.0.1-SNAPSHOT"
+                      type  "parser:dkpro_opennlp"
                     }
+                    "http://vocab.lappsgrid.org/PhraseStructure"   {
+                      producer "edu.brandeis.cs.uima.dkpro.OpenNlpParser:0.0.1-SNAPSHOT"
+                      type  "parser:dkpro_opennlp"
+                    }
+                    "http://vocab.lappsgrid.org/Constituent"   {
+                      producer "edu.brandeis.cs.uima.dkpro.OpenNlpParser:0.0.1-SNAPSHOT"
+                      type  "parser:dkpro_opennlp"
+                    }
+                  }
                 }
 
 
