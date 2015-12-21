@@ -1,5 +1,29 @@
 {
 
+    def genPentree
+
+    genPentree = { id ->
+        def node = &:"*".findAll{ &."@xmi:id" == id }[0]
+        def targetConstituentType = node."@constituentType"
+        def res = ""
+        if (targetConstituentType == "") {
+            def targetId = %.s_(node."@xmi:id")
+            def targetBegin = %.i_(node.@begin)
+            def pos = %.s_(node.@pos)
+            def targetPosTag = &:"*".findAll{ &."@xmi:id" == pos }.foreach{%.s_(&.@PosValue)}[0]
+            res = "(" + targetPosTag +" " + %.s_(&:Sofa.@sofaString).substring(targetBegin, targetBegin) +" )"
+        } else {
+            def targetChildren =  %.s_(node.@children)
+            def subtree = ""
+            targetChildren.split("\\s").foreach {
+                subtree += genPentree.trampoline(it) +" \r\n"
+            }
+            res = "(" +targetConstituentType+ "\r\n   " + subtree + " )"
+        }
+        res
+    }.trampoline()
+
+
     def targetText = %.s_(&:Sofa.@sofaString)
     def targetAnnotations = []
 
@@ -50,7 +74,7 @@
             "@type":  "http://vocab.lappsgrid.org/PhraseStructure",
             features: [
                 sentence: targetSentence,
-                penntree: targetText.substring(targetBegin, targetEnd),
+                penntree: genPentree(targetId),
                 constituents: (targetConstituents)
             ]
           ]

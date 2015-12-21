@@ -3,42 +3,21 @@
     def targetText = %.s_(&:Sofa.@sofaString)
     def targetAnnotations = []
 
-    targetAnnotations += &:Sentence.foreach {
+    targetAnnotations += &:NamedEntity.foreach {
           def targetId = %.s_(&."@xmi:id")
           def targetBegin = %.i_(&.@begin)
           def targetEnd = %.i_(&.@end)
+          def targetValue = %.toCapital(%.s_(&.@value))
           [
             id: targetId,
             start: targetBegin,
             end:  targetEnd,
-            "@type":  "http://vocab.lappsgrid.org/Sentence",
+            "@type":  "http://vocab.lappsgrid.org/"+targetValue,
             features: [
-                sentence: targetText.substring(targetBegin, targetEnd)
+                word: targetText.substring(targetBegin, targetEnd)
             ]
           ]
     }
-
-
-    targetAnnotations += &:Token.foreach {
-          def targetId = %.s_(&."@xmi:id")
-          def targetBegin = %.i_(&.@begin)
-          def targetEnd = %.i_(&.@end)
-          def pos = %.s_(&.@pos)
-          def targetPosTag = &:"*".findAll{ &."@xmi:id" == pos }.foreach{%.s_(&.@PosValue)}[0]
-          [
-            id: targetId,
-            start: targetBegin,
-            end:  targetEnd,
-            "@type":  "http://vocab.lappsgrid.org/Token",
-            features: [
-                word: targetText.substring(targetBegin, targetEnd),
-                pos: (targetPosTag)
-            ]
-          ]
-    }
-
-
-
 
     discriminator  "http://vocab.lappsgrid.org/ns/media/jsonld"
 
@@ -57,7 +36,7 @@
             {
                 metadata {
                     contains {
-                      "http://vocab.lappsgrid.org/Token#pos" {
+                      "http://vocab.lappsgrid.org/NamedEntity" {
                           producer  "edu.brandeis.cs.uima.dkpro.OpenNlpNamedEntityRecognizer:0.0.1-SNAPSHOT"
                           type  "ner:dkpro_opennlp"
                       }
