@@ -1,5 +1,7 @@
 package edu.brandeis.cs.uima.dkpro;
 
+import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
+import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpSegmenter;
 import edu.brandeis.cs.json.XmlToJson;
 import edu.brandeis.cs.uima.ServiceException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
@@ -12,7 +14,8 @@ public class OpenNlpParser extends AbstractDkProOpenNlpService {
 
     static {
         try {
-            aae = uimaDkProInit(de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpParser.class);
+            aae = uimaDkProInit(OpenNlpSegmenter.class, OpenNlpPosTagger.class,
+                    de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpParser.class);
             System.out.println("OpenNlpParser Init...");
         } catch (Exception e) {
             e.printStackTrace();
@@ -21,7 +24,7 @@ public class OpenNlpParser extends AbstractDkProOpenNlpService {
 
     String dsl = null;
 
-    public OpenNlpParser(){
+    public OpenNlpParser() {
         dsl = getTemplate();
     }
 

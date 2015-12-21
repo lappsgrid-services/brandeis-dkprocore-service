@@ -5,13 +5,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 /** 
-* OpenNlpSplitter Tester. 
+* StanfordNlpNamedEntityRecognizer Tester. 
 * 
 * @author <Authors name> 
 * @since <pre>ʮ���� 21, 2015</pre> 
 * @version 1.0 
 */ 
-public class OpenNlpSplitterTest { 
+public class StanfordNlpNamedEntityRecognizerTest { 
 
 @Before
 public void before() throws Exception { 
@@ -27,10 +27,8 @@ public void after() throws Exception {
 * 
 */ 
 @Test
-public void testExecute() throws Exception {
-    AbstractDkProService ws = new OpenNlpSplitter();
-    String res = ws.execute("How are you today? Fine thank you.");
-    System.out.println(res);
+public void testExecute() throws Exception { 
+//TODO: Test goes here... 
 } 
 
 

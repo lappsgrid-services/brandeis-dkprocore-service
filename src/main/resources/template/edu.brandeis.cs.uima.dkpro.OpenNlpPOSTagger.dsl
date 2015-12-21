@@ -29,7 +29,7 @@
             id: targetId,
             start: targetBegin,
             end:  targetEnd,
-            "@type":  "http://vocab.lappsgrid.org/Token",
+            "@type":  "http://vocab.lappsgrid.org/Token#pos",
             features: [
                 word: targetText.substring(targetBegin, targetEnd),
                 pos: (targetPosTag)

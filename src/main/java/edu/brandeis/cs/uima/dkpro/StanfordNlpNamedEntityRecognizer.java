@@ -1,6 +1,9 @@
 package edu.brandeis.cs.uima.dkpro;
 
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordNamedEntityRecognizer;
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordParser;
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordPosTagger;
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordSegmenter;
 import edu.brandeis.cs.json.XmlToJson;
 import edu.brandeis.cs.uima.ServiceException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
@@ -14,7 +17,8 @@ public class StanfordNlpNamedEntityRecognizer extends AbstractDkProOpenNlpServic
 
     static {
         try {
-            aae = uimaDkProInit(StanfordNamedEntityRecognizer.class);
+            aae = uimaDkProInit(StanfordSegmenter.class, StanfordPosTagger.class,
+                    StanfordParser.class, StanfordNamedEntityRecognizer.class);
             System.out.println("StanfordNamedEntityRecognizer Init...");
         } catch (Exception e) {
             e.printStackTrace();

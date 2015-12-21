@@ -1,6 +1,6 @@
 package edu.brandeis.cs.uima.dkpro;
 
-import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordCoreferenceResolver;
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.*;
 import edu.brandeis.cs.json.XmlToJson;
 import edu.brandeis.cs.uima.ServiceException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
@@ -14,7 +14,9 @@ public class StanfordNlpCoreference extends AbstractDkProOpenNlpService {
 
     static {
         try {
-            aae = uimaDkProInit(StanfordCoreferenceResolver.class);
+            aae = uimaDkProInit(StanfordSegmenter.class, StanfordPosTagger.class,
+                    StanfordParser.class, StanfordNamedEntityRecognizer.class,
+                    StanfordCoreferenceResolver.class);
             System.out.println("StanfordCoreferenceResolver Init...");
         } catch (Exception e) {
             e.printStackTrace();
@@ -23,7 +25,7 @@ public class StanfordNlpCoreference extends AbstractDkProOpenNlpService {
 
     String dsl = null;
 
-    public StanfordNlpCoreference(){
+    public StanfordNlpCoreference() {
         dsl = getTemplate();
     }
 

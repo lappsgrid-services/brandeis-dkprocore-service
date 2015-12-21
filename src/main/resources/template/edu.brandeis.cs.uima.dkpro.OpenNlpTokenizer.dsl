@@ -31,8 +31,7 @@
             end:  targetEnd,
             "@type":  "http://vocab.lappsgrid.org/Token",
             features: [
-                word: targetText.substring(targetBegin, targetEnd),
-                pos: (targetPosTag)
+                word: targetText.substring(targetBegin, targetEnd)
             ]
           ]
     }
