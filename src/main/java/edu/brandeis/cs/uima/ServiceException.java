@@ -9,19 +9,19 @@ package edu.brandeis.cs.uima;
  * @author shicq@cs.brandeis.edu
  *
  */
-public class UimaServiceException extends Exception {
+public class ServiceException extends Exception {
 
 	private static final long serialVersionUID = 7756634769548152198L;
 
-	public UimaServiceException() {
+	public ServiceException() {
 		super("Stanford-Web-Service-Exception:");
 	}
 	
-	public UimaServiceException(String message) {
+	public ServiceException(String message) {
 		super("Stanford-Web-Service-Exception:" + message);
 	}
 	
-	public UimaServiceException(String message, Throwable cause) {
+	public ServiceException(String message, Throwable cause) {
         super("Stanford-Web-Service-Exception:" + message, cause);
     }
 	

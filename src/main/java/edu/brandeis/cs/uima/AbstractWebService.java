@@ -83,7 +83,7 @@ public abstract class AbstractWebService implements WebService {
      * This will be overridden for each module
      */
     public abstract String execute(Container json)
-            throws UimaServiceException;
+            throws ServiceException;
 
 
     public String getTemplate() {

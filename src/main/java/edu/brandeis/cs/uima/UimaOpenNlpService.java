@@ -27,14 +27,14 @@ public class UimaOpenNlpService extends AbstractUimaOpenNlpService {
     }
 
     @Override
-    public String execute(Container json) throws UimaServiceException {
+    public String execute(Container json) throws ServiceException {
         String txt = json.getText();
         try {
             String xml = opennlpuima(aae, txt);
             return XmlToJson.transform(xml, dsl);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new UimaServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage());
         }
     }
 }

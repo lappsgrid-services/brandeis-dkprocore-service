@@ -69,6 +69,7 @@ $RECYCLE.BIN/
 *.lnk
 
 ### IntelliJ project files
+target
 .idea
 *.iml
 out
