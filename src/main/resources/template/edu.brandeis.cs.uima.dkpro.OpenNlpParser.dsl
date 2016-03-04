@@ -9,19 +9,19 @@
         if (targetConstituentType == "") {
             def targetId = %.s_(node."@xmi:id")
             def targetBegin = %.i_(node.@begin)
+            def targetEnd = %.i_(node.@end)
             def pos = %.s_(node.@pos)
             def targetPosTag = &:"*".findAll{ &."@xmi:id" == pos }.foreach{%.s_(&.@PosValue)}[0]
-            res = "(" + targetPosTag +" " + %.s_(&:Sofa.@sofaString).substring(targetBegin, targetBegin) +" )"
+            return "(" + targetPosTag +" " + %.s_(&:Sofa.@sofaString).substring(targetBegin, targetEnd) +")"
         } else {
             def targetChildren =  %.s_(node.@children)
             def subtree = ""
             targetChildren.split("\\s").foreach {
-                subtree += genPentree.trampoline(it) +" \r\n"
+                subtree += genPentree(it) +" \r\n"
             }
-            res = "(" +targetConstituentType+ "\r\n   " + subtree + " )"
+           return "(" +targetConstituentType+ "\r\n   " + subtree + " )"
         }
-        res
-    }.trampoline()
+    }
 
 
     def targetText = %.s_(&:Sofa.@sofaString)
