@@ -9,7 +9,6 @@
     def chains = &:CoreferenceChain.collectEntries {
         [it.@first.toInteger(), totchains++]
     }
-    println chains
     
     &:CoreferenceLink.each {
         def markableId =  %.i_(&."@xmi:id")
@@ -23,9 +22,12 @@
     def tokStartIdx = [:]
     def tokEndIdx = [:]
 
-    def chainsInversed = (0..totchains-1).collectEntries { [it, []] }
-    chains.keySet().each {
-        chainsInversed[chains[it]] += it
+    def chainsInversed = [:]
+    if (totchains > 0) {
+        chainsInversed = (0..totchains-1).collectEntries { [it, []] }
+        chains.keySet().each {
+            chainsInversed[chains[it]] += it
+        }
     }
     
     def targetAnnotations = []
