@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.lappsgrid.maven</groupId>
         <artifactId>parent-pom</artifactId>
-        <version>2.0.0</version>
+        <version>2.0.2</version>
     </parent>
 	<groupId>edu.brandeis.cs</groupId>
 	<artifactId>uima.dkpro</artifactId>
@@ -24,7 +24,7 @@
     </repositories>
 
     <properties>
-        <lapps.all>2.2.0</lapps.all>
+        <lapps.all>2.3.3</lapps.all>
         <lapps.discriminator>2.2.0</lapps.discriminator>
         <lapps.serialization>2.1.0</lapps.serialization>
         <opennlp.version>1.5.3</opennlp.version>
@@ -39,6 +39,7 @@
             <artifactId>all</artifactId>
             <version>${lapps.all}</version>
         </dependency>
+	<!--
         <dependency>
             <groupId>org.lappsgrid</groupId>
             <artifactId>discriminator</artifactId>
@@ -50,13 +51,7 @@
             <artifactId>serialization</artifactId>
             <version>${lapps.serialization}</version>
         </dependency>
-        <dependency>
-            <groupId>org.lappsgrid</groupId>
-            <artifactId>service-grid-libs</artifactId>
-            <version>1.1.0</version>
-        </dependency>
-
-
+	-->
 
         <dependency>
             <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
@@ -226,11 +221,6 @@
 			<artifactId>lucene-wordnet</artifactId>
 			<version>3.3.0</version>
 		</dependency>
-        <dependency>
-            <groupId>org.lappsgrid</groupId>
-            <artifactId>service-grid-libs</artifactId>
-            <version>1.1.0</version>
-        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
