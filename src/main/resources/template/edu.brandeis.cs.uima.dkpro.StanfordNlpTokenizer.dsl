@@ -58,7 +58,7 @@
                 metadata {
                     contains {
                       "http://vocab.lappsgrid.org/Token#pos" {
-                          producer  "edu.brandeis.cs.uima.dkpro.StanfordNlpTokenizer:0.0.1-SNAPSHOT"
+                          producer  "edu.brandeis.cs.uima.dkpro.stanford.StanfordNlpTokenizer:0.0.1-SNAPSHOT"
                           type  "tokenizer:dkpro_stanford"
                       }
                     }

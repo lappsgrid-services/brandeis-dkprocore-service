@@ -58,7 +58,7 @@
                 metadata {
                     contains {
                       "http://vocab.lappsgrid.org/Token#pos" {
-                          producer  "edu.brandeis.cs.uima.dkpro.OpenNlpPOSTagger:0.0.1-SNAPSHOT"
+                          producer  "edu.brandeis.cs.uima.dkpro.opennlp.OpenNlpPOSTagger:0.0.1-SNAPSHOT"
                           type  "postagger:dkpro_opennlp"
                       }
                     }

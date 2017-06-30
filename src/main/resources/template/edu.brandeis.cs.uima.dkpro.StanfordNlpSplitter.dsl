@@ -36,7 +36,7 @@
                 metadata {
                     contains {
                       "http://vocab.lappsgrid.org/Token#pos" {
-                          producer  "edu.brandeis.cs.uima.dkpro.StanfordNlpSplitter:0.0.1-SNAPSHOT"
+                          producer  "edu.brandeis.cs.uima.dkpro.stanford.StanfordNlpSplitter:0.0.1-SNAPSHOT"
                           type  "splitter:dkpro_stanford"
                       }
                     }

@@ -1,6 +1,5 @@
 package edu.brandeis.cs.uima.dkpro;
 
-import edu.brandeis.cs.uima.AbstractWebService;
 import org.apache.uima.analysis_component.AnalysisComponent;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;

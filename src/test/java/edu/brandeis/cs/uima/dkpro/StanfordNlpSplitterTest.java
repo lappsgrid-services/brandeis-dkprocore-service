@@ -1,5 +1,6 @@
 package edu.brandeis.cs.uima.dkpro;
 
+import edu.brandeis.cs.uima.dkpro.stanford.StanfordNlpSplitter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

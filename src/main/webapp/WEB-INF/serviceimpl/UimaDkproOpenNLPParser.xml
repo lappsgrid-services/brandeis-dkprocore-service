@@ -3,7 +3,7 @@
 <beans>
   <bean id="target" class="jp.go.nict.langrid.servicecontainer.handler.TargetServiceFactory" >
     <property name="service">
-      <bean class="edu.brandeis.cs.uima.dkpro.OpenNlpParser" />
+      <bean class="edu.brandeis.cs.uima.dkpro.opennlp.OpenNlpParser" />
     </property>
   </bean>
 </beans>

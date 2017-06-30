@@ -18,7 +18,7 @@
 
     <repositories>
         <repository>
-            <id>dkpro</id>
+            <id>ukp-oss-model-releases</id>
             <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-model-releases-local/</url>
         </repository>
     </repositories>
@@ -39,19 +39,6 @@
             <artifactId>all</artifactId>
             <version>${lapps.all}</version>
         </dependency>
-	<!--
-        <dependency>
-            <groupId>org.lappsgrid</groupId>
-            <artifactId>discriminator</artifactId>
-            <version>${lapps.discriminator}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.lappsgrid</groupId>
-            <artifactId>serialization</artifactId>
-            <version>${lapps.serialization}</version>
-        </dependency>
-	-->
 
         <dependency>
             <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
@@ -120,11 +107,6 @@
             <version>20140827.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.opennlp</groupId>
-            <artifactId>opennlp-uima</artifactId>
-            <version>1.5.3</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.uima</groupId>
             <artifactId>uimafit-core</artifactId>
             <version>2.1.0</version>
@@ -135,25 +117,11 @@
             <version>8.0</version>
         </dependency>
         <dependency>
-            <groupId>net.sf.extjwnl</groupId>
-            <artifactId>extjwnl-data-wn31</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
             <groupId>com.cedarsoftware</groupId>
             <artifactId>json-io</artifactId>
             <version>3.0.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.4.2</version>
-        </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.json</groupId>-->
-            <!--<artifactId>json</artifactId>-->
-            <!--<version>20140107</version>-->
-        <!--</dependency>-->
+
         <!-- Stanford corenlp -->
         <dependency>
             <groupId>edu.stanford.nlp</groupId>
@@ -188,46 +156,7 @@
 			<artifactId>opennlp-maxent</artifactId>
 			<version>3.0.3</version>
 		</dependency>
-		<!-- LappsGrid dependencies -->
-		<!--<dependency>-->
-			<!--<groupId>org.lappsgrid</groupId>-->
-			<!--<artifactId>api</artifactId>-->
-			<!--<version>${lapps.version}</version>-->
-		<!--</dependency>-->
 
-
-		<dependency>
-			<groupId>com.sun.faces</groupId>
-			<artifactId>jsf-api</artifactId>
-			<version>2.1.7</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.faces</groupId>
-			<artifactId>jsf-impl</artifactId>
-			<version>2.1.7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.5</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-wordnet</artifactId>
-			<version>3.3.0</version>
-		</dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.8.1</version>
-            <scope>test</scope>
-        </dependency>
 	</dependencies>
 
 	<build>

@@ -37,7 +37,7 @@
                 metadata {
                     contains {
                       "http://vocab.lappsgrid.org/NamedEntity" {
-                          producer  "edu.brandeis.cs.uima.dkpro.OpenNlpNamedEntityRecognizer:0.0.1-SNAPSHOT"
+                          producer  "edu.brandeis.cs.uima.dkpro.opennlp.OpenNlpNamedEntityRecognizer:0.0.1-SNAPSHOT"
                           type  "ner:dkpro_opennlp"
                       }
                     }

@@ -121,7 +121,7 @@
                 metadata {
                     contains {
                       "http://vocab.lappsgrid.org/Token#pos" {
-                          producer  "edu.brandeis.cs.uima.dkpro.StanfordNlpParser:0.0.1-SNAPSHOT"
+                          producer  "edu.brandeis.cs.uima.dkpro.stanford.StanfordNlpParser:0.0.1-SNAPSHOT"
                           type  "parser:dkpro_stanford"
                       }
                     }

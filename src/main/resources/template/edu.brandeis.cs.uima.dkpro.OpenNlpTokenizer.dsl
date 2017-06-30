@@ -57,7 +57,7 @@
                 metadata {
                     contains {
                       "http://vocab.lappsgrid.org/Token" {
-                          producer  "edu.brandeis.cs.uima.dkpro.OpenNlpTokenizer:0.0.1-SNAPSHOT"
+                          producer  "edu.brandeis.cs.uima.dkpro.opennlp.OpenNlpTokenizer:0.0.1-SNAPSHOT"
                           type  "tokenizer:dkpro_opennlp"
                       }
                     }

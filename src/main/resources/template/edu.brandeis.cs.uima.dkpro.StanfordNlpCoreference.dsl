@@ -103,15 +103,15 @@
                 metadata {
                     contains {
                       "http://vocab.lappsgrid.org/Token#pos" {
-                          producer  "edu.brandeis.cs.uima.dkpro.StanfordNlpCoreference:0.0.1-SNAPSHOT"
+                          producer  "edu.brandeis.cs.uima.dkpro.stanford.StanfordNlpCoreference:0.0.1-SNAPSHOT"
                           type  "coref:dkpro_stanford"
                       }
                       "http://vocab.lappsgrid.org/Markable" {
-                          producer  "edu.brandeis.cs.uima.dkpro.StanfordNlpCoreference:0.0.1-SNAPSHOT"
+                          producer  "edu.brandeis.cs.uima.dkpro.stanford.StanfordNlpCoreference:0.0.1-SNAPSHOT"
                           type  "coref:dkpro_stanford"
                       }
                       "http://vocab.lappsgrid.org/Corefernce" {
-                          producer  "edu.brandeis.cs.uima.dkpro.StanfordNlpCoreference:0.0.1-SNAPSHOT"
+                          producer  "edu.brandeis.cs.uima.dkpro.stanford.StanfordNlpCoreference:0.0.1-SNAPSHOT"
                           type  "coref:dkpro_stanford"
                       }
                     }

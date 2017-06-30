@@ -3,7 +3,7 @@
 <beans>
   <bean id="target" class="jp.go.nict.langrid.servicecontainer.handler.TargetServiceFactory" >
     <property name="service">
-      <bean class="edu.brandeis.cs.uima.dkpro.OpenNlpPOSTagger" />
+      <bean class="edu.brandeis.cs.uima.dkpro.opennlp.OpenNlpPOSTagger" />
     </property>
   </bean>
 </beans>

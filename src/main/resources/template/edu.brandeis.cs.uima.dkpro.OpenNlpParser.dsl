@@ -121,11 +121,11 @@
                       type  "parser:dkpro_opennlp"
                     }
                     "http://vocab.lappsgrid.org/PhraseStructure"   {
-                      producer "edu.brandeis.cs.uima.dkpro.OpenNlpParser:0.0.1-SNAPSHOT"
+                      producer "edu.brandeis.cs.uima.dkpro.opennlp.OpenNlpParser:0.0.1-SNAPSHOT"
                       type  "parser:dkpro_opennlp"
                     }
                     "http://vocab.lappsgrid.org/Constituent"   {
-                      producer "edu.brandeis.cs.uima.dkpro.OpenNlpParser:0.0.1-SNAPSHOT"
+                      producer "edu.brandeis.cs.uima.dkpro.opennlp.OpenNlpParser:0.0.1-SNAPSHOT"
                       type  "parser:dkpro_opennlp"
                     }
                   }

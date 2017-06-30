@@ -1,6 +1,6 @@
 package edu.brandeis.cs.uima.dkpro;
 
-import edu.brandeis.cs.uima.AbstractWebService;
+import edu.brandeis.cs.uima.dkpro.opennlp.OpenNlpPOSTagger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
